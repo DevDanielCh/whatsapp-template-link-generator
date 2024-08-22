@@ -45,9 +45,14 @@
     mensagem = getMessageFromUrl();
   });
 
-  $: mensagemFinal = mensagem
-    .replaceAll("{{TELEFONE}}", telefone)
-    .replaceAll("{{NOME}}", nome);
+  const getMensagemFinal = () => {
+    var mensagemFinal = mensagem;
+    if (telefone) mensagemFinal.replaceAll("{{TELEFONE}}", telefone);
+    if (nome) mensagemFinal.replaceAll("{{NOME}}", nome);
+    return mensagemFinal;
+  };
+
+  $: mensagemFinal = getMensagemFinal();
 </script>
 
 <main
