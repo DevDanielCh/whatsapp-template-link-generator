@@ -28,6 +28,10 @@
     "bits-ui": "^0.21.13",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
+    "cmdk-sv": "^0.0.18",
+    "lucide-svelte": "^0.429.0",
+    "svelte-radix": "^1.1.1",
+    "svelte-tel-input": "^3.5.1",
     "tailwind-merge": "^2.5.2",
     "tailwind-variants": "^0.2.1",
     "tailwindcss-animate": "^1.0.7"
