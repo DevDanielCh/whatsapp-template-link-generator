@@ -20,8 +20,7 @@
     let whatsChatUrl = new URL("https://wa.me/");
     if (telefone) whatsChatUrl.searchParams.append("phone", telefone);
     if (mensagemFinal) whatsChatUrl.searchParams.append("text", mensagemFinal);
-    console.log(whatsChatUrl.toString());
-    //window.open(``)
+    window.open(whatsChatUrl.toString());
   };
 
   // Função para obter o parâmetro 'message' da URL
