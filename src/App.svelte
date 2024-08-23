@@ -45,26 +45,21 @@
     mensagem = getMessageFromUrl();
   });
 
-  const getMensagemFinal = () => {
-    var mensagemFinal = mensagem;
-    if (telefone) mensagemFinal.replaceAll("{{TELEFONE}}", telefone);
-    if (nome) mensagemFinal.replaceAll("{{NOME}}", nome);
-    return mensagemFinal;
-  };
-
-  $: mensagemFinal = getMensagemFinal();
+  $: mensagemFinal = mensagem
+    .replaceAll("{{TELEFONE}}", telefone || "{{TELEFONE}}")
+    .replaceAll("{{NOME}}", nome || "{{NOME}}");
 </script>
 
 <main
   class="flex flex-col w-screen h-screen gap-8 px-8 py-4 items-center justify-center"
 >
-  <Card.Root class="w-[650px]">
+  <Card.Root class="w-[300px] sm:w-[400px] md:w-[650px] xl:w-[750px]">
     <Card.Header class="flex justify-center items-center">
       <Card.Title>Gerador de Link para chat do WhatsApp</Card.Title>
     </Card.Header>
     <Separator class="mb-6" />
     <Card.Content class="flex flex-col justify-center items-stretch gap-4">
-      <div class="flex justify-center items-center gap-4">
+      <div class="flex flex-col md:flex-row justify-center items-center gap-4">
         <div class="flex w-full max-w-sm flex-col gap-1.5">
           <Label for="phone" class="flex justify-between">
             Número de Telefone:
